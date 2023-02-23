@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@font-face {
+    font-family: cream-peach;
+    src: url('../font/Cream Peach.ttf');
+}
+body {
+    @apply w-screen h-screen font-sans;
+}
+#container {
+    @apply w-full h-full flex flex-col;
+    background: url('https://cdn.pixabay.com/photo/2021/01/13/03/27/heart-5913128__340.png');
+}
+.person {
+    @apply w-full h-[calc(100%*2.5/6)] flex flex-col py-4 gap-4;
+}
+.person .person-img {
+    @apply relative h-full aspect-square bg-white rounded-full py-4 place-self-center overflow-hidden;
+}
+.person .person-img svg {
+    @apply absolute w-full h-full left-0 top-0;
+}
+.person .person-img .person-img-input {
+    @apply h-full w-full opacity-0;
+}
+.person .person-name {
+    @apply h-1/5 w-2/5 text-blue-700 bg-white/75 drop-shadow-lg font-semibold outline-0 focus:text-black focus:border-2 border-black rounded-lg text-center py-2 place-self-center;
+    /* filter: drop-shadow(0 10px 8px rgb(255 255 255 / 0.04)) drop-shadow(0 4px 3px rgb(255 255 255 / 0.1)) !important; */
+}
+#generator {
+    @apply w-full h-[calc(100%*1/6)] flex flex-col;
+}
+#generator > #result {
+    @apply h-fit text-white text-5xl text-center drop-shadow-lg mb-2;
+    font-family: cream-peach;
+}
+#generator > #generate-btn {
+    @apply w-2/5 h-full text-xl font-semibold bg-gradient-to-r from-red-500 to-purple-600 rounded-full place-self-center;
+}
+/* #generator > #result {
+    @apply w-full h-0 text-4xl text-red-500 flex justify-center items-center;
+    font-family: cream-peach;
+} */
+#generator > #result:not(.hidden){
+    @apply h-full;
+}
